@@ -22,6 +22,8 @@ export const fetchSearchedMovies = async (searchQuery) => {
 // Fetch popular movies
 export const fetchPopularMovies = async () => {
   try {
+    console.log("API Key in production:", import.meta.env.VITE_TMDB_API_KEY);
+
     const res = await axios.get(`${baseUrl}/movie/popular?api_key=${apiKey}`);
     return res.data.results;
   } catch (error) {
